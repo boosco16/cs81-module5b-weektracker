@@ -10,4 +10,31 @@ const myWeek = [
 // The creative and physical categories will fight to dominate my week. I'm going to guess creative will be on top. 
 // My peak enjoyment will be focused around evening time, because thats when I've completed all my work and have time to relax. 
 
+function totalOutdoorHours(week) {
+  const physicalActivities = week.filter(entry => entry.category === "physical");
+  const total = physicalActivities.reduce((sum, entry) => sum + entry.hoursSpent, 0);
+
+  return total: 
+
+function lowEffortHighEnjoyment(week) {
+  return week.filter(entry => entry.hoursSpent <= 1 && entry.enjoyment >= 8);
+}
+ 
+
+function filterByCondition(testFn) {
+  return myWeek.filter(testFn);
+}
+
+console.log("Analyzing My Weekly Activities...");
+console.log("");
+console.log("Total hours spent on physical activity:", totalOutdoorHours(myWeek));
+ 
+const lowEffortHigh = lowEffortHighEnjoyment(myWeek);
+const lowEffortNames = lowEffortHigh.map(entry => entry.activity);
+console.log("Low-effort, high-enjoyment activities:", lowEffortNames.join(", "));
+ 
+const quickWins = filterByCondition(act => act.hoursSpent < 1 && act.enjoyment > 8);
+const quickWinNames = quickWins.map(act => act.activity);
+console.log("Quick wins (under 1 hour, enjoyment over 8):", quickWinNames.join(", "));
+ 
   
