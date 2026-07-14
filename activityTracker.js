@@ -14,7 +14,7 @@ function totalOutdoorHours(week) {
   const physicalActivities = week.filter(entry => entry.category === "physical");
   const total = physicalActivities.reduce((sum, entry) => sum + entry.hoursSpent, 0);
 
-  return total: 
+  return total; 
 
 function lowEffortHighEnjoyment(week) {
   return week.filter(entry => entry.hoursSpent <= 1 && entry.enjoyment >= 8);
